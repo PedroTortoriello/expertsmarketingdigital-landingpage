@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidade de Experts | Marketing Digital, IA e Crescimento</title>
+  <meta
+    name="description"
+    content="Comunidade gratuita para quem quer aprender Marketing Digital, Inteligência Artificial e crescer com mais direção, encontros e troca real."
+  >
+  <meta name="theme-color" content="#f4ede3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5efee;
+      --bg-deep: #ead9d7;
+      --surface: rgba(255, 255, 255, 0.8);
+      --surface-strong: rgba(255, 255, 255, 0.94);
+      --ink: #141414;
+      --soft: #4f4a4a;
+      --muted: #7c7272;
+      --line: rgba(20, 20, 20, 0.11);
+      --line-soft: rgba(20, 20, 20, 0.06);
+      --accent: #bb2e2e;
+      --accent-deep: #8d1717;
+      --green: #7a2020;
+      --container: 1180px;
+      --radius-xl: 40px;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --shadow-xl: 0 30px 90px rgba(57, 18, 18, 0.12);
+      --shadow-lg: 0 24px 54px rgba(57, 18, 18, 0.1);
+      --shadow-sm: 0 14px 28px rgba(57, 18, 18, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Instrument Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(187, 46, 46, 0.12), transparent 28%),
+        radial-gradient(circle at 88% 10%, rgba(141, 23, 23, 0.08), transparent 18%),
+        linear-gradient(180deg, #faf5f5 0%, var(--bg) 44%, #fbf7f7 100%);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 250, 250, 0.82);
+      border-bottom: 1px solid rgba(20, 20, 20, 0.05);
+    }
+
+    .topbar-inner,
+    .footer-line,
+    .hero-actions,
+    .hero-meta,
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .topbar-inner {
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+    }
+
+    .brand-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: linear-gradient(145deg, var(--accent), #d74c4c);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 18px 34px rgba(187, 46, 46, 0.24);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand span span {
+      display: block;
+      margin-top: 0.18rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      font-size: 0.95rem;
+      color: var(--soft);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 1rem 1.45rem;
+      border: 1px solid transparent;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      color: #fff;
+      background: linear-gradient(135deg, #232825, #38413b);
+      box-shadow: 0 18px 30px rgba(31, 35, 31, 0.16);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.78);
+      border-color: rgba(20, 20, 20, 0.09);
+      color: var(--ink);
+    }
+
+    .section {
+      padding: 7rem 0 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(187, 46, 46, 0.08);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(3.35rem, 7vw, 6.6rem);
+      max-width: 9.5ch;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4.6vw, 4.15rem);
+      max-width: 11ch;
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 2vw, 1.65rem);
+    }
+
+    .hero,
+    .cta {
+      padding-top: 2.4rem;
+    }
+
+    .hero-shell,
+    .story-panel,
+    .cta-box {
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 2.15rem;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(250, 242, 242, 0.76));
+      isolation: isolate;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -180px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(187, 46, 46, 0.08);
+      z-index: -1;
+    }
+
+    .hero-grid,
+    .section-head,
+    .editorial-grid,
+    .story-grid,
+    .quote-band,
+    .faq-grid,
+    .cta-box {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+      align-items: center;
+      gap: 2.6rem;
+    }
+
+    .hero-intro {
+      max-width: 50rem;
+      margin-top: 1.2rem;
+      color: var(--soft);
+      font-size: 1.12rem;
+      line-height: 1.78;
+    }
+
+    .hero-support {
+      max-width: 43rem;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .hero-meta {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem 1.4rem;
+      margin-top: 1.55rem;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta span {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .hero-meta span::before {
+      content: "";
+      position: absolute;
+      top: 0.55rem;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-rail {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(31, 35, 31, 0.08);
+    }
+
+    .hero-rail-item {
+      padding-left: 1rem;
+      border-left: 1px solid rgba(31, 35, 31, 0.1);
+    }
+
+    .hero-rail-item strong,
+    .visual-panel strong,
+    .mini-points strong,
+    .insight-item strong,
+    .pillar-item strong {
+      display: block;
+      margin-bottom: 0.28rem;
+    }
+
+    .hero-rail-item strong {
+      font-size: 0.96rem;
+    }
+
+    .hero-rail-item span,
+    .visual-panel p,
+    .visual-panel span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .visual-stage {
+      position: relative;
+      height: 100%;
+      padding: 0 0 2.2rem 2.4rem;
+    }
+
+    .hero-frame {
+      position: relative;
+      overflow: hidden;
+      min-height: 640px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: 640px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(22, 26, 23, 0.1) 0%, rgba(22, 26, 23, 0.42) 100%);
+    }
+
+    .visual-panel {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .visual-panel.top {
+      top: 28px;
+      left: 0;
+      max-width: 240px;
+      padding: 1rem 1.05rem;
+      border-radius: 20px;
+    }
+
+    .visual-panel.bottom {
+      right: 0;
+      bottom: 0;
+      width: min(82%, 420px);
+      padding: 1rem;
+      border-radius: 24px;
+    }
+
+    .mini-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .mini-points div {
+      padding: 0.85rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .mini-points strong {
+      font-size: 0.8rem;
+      color: var(--accent-deep);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 2.4rem;
+      align-items: end;
+      margin-bottom: 2.25rem;
+    }
+
+    .section-head p {
+      max-width: 50ch;
+      color: var(--soft);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      justify-self: end;
+    }
+
+    .editorial-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 2.8rem;
+      align-items: start;
+    }
+
+    .story-lead {
+      font-size: clamp(1.28rem, 1.8vw, 1.5rem);
+      line-height: 1.72;
+      letter-spacing: -0.02em;
+      max-width: 25ch;
+    }
+
+    .story-body,
+    .story-panel p,
+    .faq-aside p,
+    .cta-box p {
+      color: var(--soft);
+      line-height: 1.8;
+    }
+
+    .story-body {
+      max-width: 56ch;
+    }
+
+    .insight-list,
+    .value-list,
+    .pillar-list,
+    .timeline,
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .insight-item,
+    .value-row,
+    .pillar-item,
+    .timeline-item,
+    .faq-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .insight-item p,
+    .value-copy,
+    .pillar-item p,
+    .timeline-item p,
+    .faq-item p {
+      color: var(--soft);
+      line-height: 1.74;
+    }
+
+    .quote-band {
+      margin-top: 3rem;
+      padding-top: 2.4rem;
+      border-top: 1px solid var(--line);
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 2.2rem;
+      align-items: start;
+    }
+
+    .quote-band blockquote {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    .quote-band p {
+      max-width: 48ch;
+      color: var(--soft);
+      line-height: 1.85;
+    }
+
+    .value-row,
+    .timeline-item {
+      display: grid;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .value-row {
+      grid-template-columns: 84px minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .timeline-item {
+      grid-template-columns: 82px 1fr;
+    }
+
+    .value-index,
+    .timeline-number {
+      color: var(--accent-deep);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding-top: 0.24rem;
+    }
+
+    .value-copy {
+      max-width: 54ch;
+    }
+
+    .story-grid {
+      grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr);
+      gap: 2.2rem;
+      align-items: start;
+    }
+
+    .story-panel {
+      position: sticky;
+      top: 104px;
+      padding: 2rem 1.8rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(249, 241, 241, 0.8));
+    }
+
+    .story-panel p,
+    .faq-aside p,
+    .cta-box p {
+      margin-top: 1rem;
+    }
+
+    .faq-grid {
+      grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+      gap: 2.6rem;
+      align-items: start;
+    }
+
+    .faq-aside p {
+      max-width: 34ch;
+    }
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+    }
+
+    .cta {
+      padding: 7rem 0 5.2rem;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      padding: 2.5rem 2.4rem;
+      border-radius: 34px;
+      background: linear-gradient(135deg, #111111, #2b0f0f);
+      color: #f9f2ea;
+      box-shadow: 0 28px 68px rgba(29, 35, 31, 0.2);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      top: -70px;
+      right: -50px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(187, 46, 46, 0.12);
+    }
+
+    .cta-box p {
+      max-width: 54ch;
+      color: rgba(249, 242, 234, 0.8);
+    }
+
+    .cta-actions {
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .cta .button.primary {
+      background: linear-gradient(135deg, #ffffff, #fff5f5);
+      color: var(--ink);
+      box-shadow: 0 18px 34px rgba(255, 255, 255, 0.16);
+    }
+
+    .cta .button.secondary {
+      color: #fff7f7;
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .footer {
+      padding: 0 0 2.6rem;
+    }
+
+    .footer-line {
+      padding-top: 1.4rem;
+      align-items: flex-start;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .footer-line strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .section-head,
+      .editorial-grid,
+      .story-grid,
+      .quote-band,
+      .faq-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .story-panel {
+        position: static;
+      }
+
+      .section-head p {
+        justify-self: start;
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-rail,
+      .mini-points {
+        grid-template-columns: 1fr;
+      }
+
+      .value-row,
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .visual-stage {
+        padding: 0;
+      }
+
+      .hero-frame,
+      .hero-frame img {
+        min-height: 500px;
+        height: 500px;
+      }
+
+      .visual-panel.top,
+      .visual-panel.bottom {
+        position: static;
+        width: auto;
+        max-width: none;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        position: static;
+      }
+
+      .topbar-inner,
+      .footer-line {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+
+      .top-links a:not(.button) {
+        display: none;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 1.4rem;
+      }
+
+      .section,
+      .cta {
+        padding-top: 4.8rem;
+      }
+
+      h1,
+      h2,
+      .hero-intro,
+      .hero-support,
+      .story-lead,
+      .story-body,
+      .value-copy {
+        max-width: none;
+      }
+
+      .hero-shell,
+      .story-panel,
+      .cta-box {
+        padding: 1.35rem;
+        border-radius: 28px;
+      }
+
+      .hero-frame,
+      .hero-frame img {
+        min-height: 360px;
+        height: 360px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-badge">CE</span>
+        <span>
+          <strong>Comunidade de Experts</strong>
+          <span>Marketing Digital, IA e crescimento com pessoas reais</span>
+        </span>
+      </a>
+
+      <nav class="top-links" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#faq">FAQ</a>
+        <a class="button primary" href="https://chat.whatsapp.com/EKnzU212Bzn54gruhkb56c" target="_blank" rel="noreferrer noopener">
+          Entrar na comunidade
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div>
+              <span class="kicker">Comunidade gratuita, prática e realmente próxima</span>
+              <h1 style="margin-top: 1rem;">Aprender no digital fica mais leve quando existe troca, contexto e direção.</h1>
+              <p class="hero-intro">
+                A Comunidade de Experts reúne pessoas que querem aprender Marketing Digital, explorar Inteligência Artificial
+                e evoluir com mais clareza, sem a sensação de estar tentando crescer sozinho no meio do ruído.
+              </p>
+              <p class="hero-support">
+                É um espaço para conversar com gente real, criar repertório, fortalecer confiança e transformar informação
+                solta em avanço consistente, com menos pose e mais verdade.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button primary" href="https://chat.whatsapp.com/EKnzU212Bzn54gruhkb56c" target="_blank" rel="noreferrer noopener">
+                  Quero entrar agora
+                </a>
+                <a class="button secondary" href="https://bit.ly/comunidadeexpertsaju" target="_blank" rel="noreferrer noopener">
+                  Conhecer melhor
+                </a>
+              </div>
+
+              <div class="hero-meta" aria-label="Destaques da comunidade">
+                <span>Entrada gratuita</span>
+                <span>Encontros online e presenciais</span>
+                <span>Troca real entre pessoas</span>
+              </div>
+
+              <div class="hero-rail">
+                <div class="hero-rail-item">
+                  <strong>Aprendizado aplicável</strong>
+                  <span>Temas atuais tratados com clareza, utilidade e profundidade prática.</span>
+                </div>
+                <div class="hero-rail-item">
+                  <strong>Ambiente confiável</strong>
+                  <span>Menos barulho, mais conversa boa, networking e evolução constante.</span>
+                </div>
+                <div class="hero-rail-item">
+                  <strong>Ritmo humano</strong>
+                  <span>Você participa no seu tempo, com proximidade e sem pressão performática.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="visual-stage">
+                <div class="hero-frame">
+                  <img
+                    src="https://static.wixstatic.com/media/10f12a_f607f2a0ea1d4e7ab51081ee95dc2d68~mv2.jpeg/v1/fill/w_881,h_588,al_c,q_85,enc_avif,quality_auto/WhatsApp%20Image%202025-09-19%20at%2008_41_52.jpeg"
+                    alt="Encontro da Comunidade de Experts"
+                  >
+                </div>
+
+                <div class="visual-panel top">
+                  <strong>Mais do que conteúdo</strong>
+                  <span>Uma comunidade para conversar, criar conexão e continuar em movimento com consistência.</span>
+                </div>
+
+                <div class="visual-panel bottom">
+                  <div class="mini-points" aria-hidden="true">
+                    <div>
+                      <strong>Temas</strong>
+                      <span>Marketing, IA e crescimento pessoal</span>
+                    </div>
+                    <div>
+                      <strong>Formato</strong>
+                      <span>Grupo, encontros e troca contínua</span>
+                    </div>
+                    <div>
+                      <strong>Clima</strong>
+                      <span>Mais presença, menos pose</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Por que essa comunidade existe</span>
+            <h2 style="margin-top: 1rem;">Tem muita informação no mercado. O que falta, quase sempre, é um ambiente que acolha e organize.</h2>
+          </div>
+          <p>
+            A proposta não é adicionar mais barulho. É criar um espaço onde aprender volte a parecer leve, possível e conectado com a vida real.
+          </p>
+        </div>
+
+        <div class="editorial-grid">
+          <div>
+            <p class="story-lead">
+              Muita gente quer entrar no digital, vender melhor, entender IA, melhorar posicionamento ou encontrar um caminho
+              mais claro. Só que quase tudo chega fragmentado, acelerado e sem contexto suficiente.
+            </p>
+          </div>
+
+          <div class="insight-list">
+            <div class="insight-item">
+              <strong>Menos excesso, mais clareza</strong>
+              <p>Você encontra conversas que ajudam a pensar melhor, não apenas consumir mais conteúdo.</p>
+            </div>
+            <div class="insight-item">
+              <strong>Mais proximidade, menos promessa pronta</strong>
+              <p>O foco aqui é construir repertório, confiança e movimento com pessoas reais.</p>
+            </div>
+            <div class="insight-item">
+              <strong>Mais continuidade no aprendizado</strong>
+              <p>O crescimento deixa de parecer solitário porque existe ambiente, ritmo e troca constante.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-band">
+          <blockquote>
+            “Quando o ambiente é bom, aprender deixa de ser peso e vira movimento.”
+          </blockquote>
+          <p>
+            A Comunidade de Experts une Marketing Digital, Inteligência Artificial e desenvolvimento pessoal sem estética de promessa pronta.
+            A energia aqui é de construção, presença e avanço consistente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">O que você encontra</span>
+            <h2 style="margin-top: 1rem;">Uma experiência mais útil, mais leve e mais confiável do começo ao fim.</h2>
+          </div>
+          <p>
+            O valor da comunidade não está só nos temas, mas na forma como eles são vividos: com clareza, proximidade e troca contínua.
+          </p>
+        </div>
+
+        <div class="value-list">
+          <article class="value-row">
+            <span class="value-index">01</span>
+            <h3>Conversas que ajudam de verdade</h3>
+            <p class="value-copy">
+              Menos conteúdo jogado por jogar. Mais troca que amplia visão, repertório e clareza para decidir melhor.
+            </p>
+          </article>
+
+          <article class="value-row">
+            <span class="value-index">02</span>
+            <h3>Temas atuais, sem complicação</h3>
+            <p class="value-copy">
+              Marketing Digital, IA, presença online e crescimento discutidos de forma prática, acessível e aplicável.
+            </p>
+          </article>
+
+          <article class="value-row">
+            <span class="value-index">03</span>
+            <h3>Gente em movimento</h3>
+            <p class="value-copy">
+              Pessoas buscando evoluir, testar, aprender, empreender e se desenvolver juntas com mais constância e menos isolamento.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container story-grid">
+        <div class="story-panel">
+          <span class="kicker">Como funciona</span>
+          <h2 style="margin-top: 1rem;">Uma entrada simples para um ambiente que pode destravar seu crescimento.</h2>
+          <p>
+            O objetivo não é criar barreira. É facilitar sua aproximação com uma comunidade em que o conteúdo faz sentido,
+            as pessoas são acessíveis e o ritmo convida você a permanecer.
+          </p>
+
+          <div class="pillar-list">
+            <div class="pillar-item">
+              <strong>Marketing Digital</strong>
+              <p>Estratégia, presença, posicionamento e visão de mercado com foco prático.</p>
+            </div>
+            <div class="pillar-item">
+              <strong>Inteligência Artificial</strong>
+              <p>Ferramentas, possibilidades e usos que ajudam a trabalhar melhor e pensar mais rápido.</p>
+            </div>
+            <div class="pillar-item">
+              <strong>Desenvolvimento Pessoal</strong>
+              <p>Mentalidade, consistência e evolução para sustentar crescimento no longo prazo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-number">01</span>
+            <div>
+              <h3>Entre no grupo</h3>
+              <p>O acesso é gratuito e começa pelo WhatsApp, sem fricção desnecessária.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-number">02</span>
+            <div>
+              <h3>Entenda a dinâmica</h3>
+              <p>Você conhece os temas, acompanha as trocas e percebe rapidamente o valor do ambiente.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-number">03</span>
+            <div>
+              <h3>Participe dos encontros</h3>
+              <p>Online ou presenciais, eles transformam contato em conexão real e fortalecem o networking.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-number">04</span>
+            <div>
+              <h3>Evolua no seu ritmo</h3>
+              <p>Sem pressão artificial, mas com mais repertório, apoio e constância para continuar avançando.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-aside">
+          <span class="kicker">Dúvidas comuns</span>
+          <h2 style="margin-top: 1rem;">Clareza para quem está chegando agora.</h2>
+          <p>
+            Esta parte foi mantida simples, limpa e direta para reduzir objeções e sustentar uma leitura mais elegante até o fechamento.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Precisa pagar para entrar?</h3>
+            <p>Não. A participação na comunidade é gratuita.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>É só para quem já trabalha com marketing?</h3>
+            <p>Não. Também faz sentido para quem está começando ou buscando uma direção melhor.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Tem encontro presencial?</h3>
+            <p>Sim. A comunidade promove encontros presenciais e online.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Que tipo de assunto aparece por lá?</h3>
+            <p>Marketing Digital, IA, networking, crescimento profissional e desenvolvimento pessoal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="kicker" style="color:#f9f2ea;">Próximo passo</span>
+            <h2 style="margin-top: 1rem; max-width: 12ch;">Se fizer sentido para você, o próximo passo é simples.</h2>
+            <p>
+              Entre na Comunidade de Experts e acompanhe um espaço mais leve, mais próximo e mais útil para quem quer crescer
+              no digital com mais clareza, boas conexões e menos ruído.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="button primary" href="https://chat.whatsapp.com/EKnzU212Bzn54gruhkb56c" target="_blank" rel="noreferrer noopener">
+              Entrar no grupo
+            </a>
+            <a class="button secondary" href="https://bit.ly/comunidadeexpertsaju" target="_blank" rel="noreferrer noopener">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-line">
+      <div>
+        <strong>Comunidade de Experts</strong><br>
+        Marketing Digital, IA e crescimento com encontros, troca e comunidade.
+      </div>
+      <div>
+        Comunidade Experts | Marketing Digital Aracaju | Tráfego Pago Aracaju<br>
+        Este site não pertence ao Facebook/Meta e não possui relação profissional com essas empresas.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
